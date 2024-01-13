@@ -1,10 +1,10 @@
 public class BankAccount{
-    private String accno;
+    private long accno;
     private String accname;
     private double balance;
-    public BankAccount(String accno,String accname,double balance){
+    public BankAccount(String name,long accno,double balance){
         this.accno=accno;
-        this.accname=accname;
+        this.name=accname;
         this.balance=balance;
     }
     public void deposit(double amount)
@@ -40,7 +40,11 @@ public class BankAccount{
 
     }
     public static void main(String[] args){
-        BankAccount account=new BankAccount("Aadhya","0886974215",100000);
+        Scanner read=new Scanner(System.in);
+        String name=read.nextInt();
+        long accno=read.nextLong();
+        double balance=read.nextDouble();
+        BankAccount account=new BankAccount(name,accno,balance);
         account.deposit(25000);
         account.withdrawl(75000);
         account.display();
